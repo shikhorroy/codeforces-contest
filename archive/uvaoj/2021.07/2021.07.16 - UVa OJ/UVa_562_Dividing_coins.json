@@ -1,0 +1,34 @@
+{
+  "name" : "UVa_562_Dividing_coins",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "2\n3\n2 3 5\n4\n1 2 4 6",
+    "output" : "0\n1\n",
+    "index" : 0,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa_562_Dividing_coins",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.16",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

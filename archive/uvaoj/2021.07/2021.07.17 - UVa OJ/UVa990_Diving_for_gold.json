@@ -1,0 +1,44 @@
+{
+  "name" : "UVa990_Diving_for_gold",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "210 4\n3\n10 5\n10 1\n7 2",
+    "output" : "7\n2\n10 5\n7 2",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "604 3\n28\n32 11\n15 83\n78 61\n45 56\n87 3\n14 57\n52 64\n10 45\n14 99\n55 6\n89 11\n64 79\n7 73\n78 86\n73 62\n73 1\n85 5\n19 88\n97 15\n18 16\n74 84\n29 26\n77 10\n68 95\n58 84\n16 57\n83 22\n8 23\n\n210 4\n3\n10 1\n10 5\n7 2\n\n",
+    "output" : "388\n5\n15 83\n10 45\n14 99\n7 73\n19 88\n\n7\n2\n10 5\n7 2\n",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "210 4\n3\n10 1\n10 5\n7 2\n",
+    "output" : "7\n2\n10 5\n7 2\n",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa990_Diving_for_gold",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.17",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "java.util.Scanner",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
