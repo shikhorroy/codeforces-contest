@@ -1,0 +1,34 @@
+{
+  "name" : "UVa1213_Sum_of_Different_Primes",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "24 3\n24 2\n2 1\n1 1\n4 2\n18 3\n17 1\n17 3\n17 4\n100 5\n1000 10\n1120 14\n0 0\n",
+    "output" : "2\n3\n1\n0\n0\n2\n1\n0\n1\n55\n200102899\n2079324314",
+    "index" : 0,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa1213_Sum_of_Different_Primes",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.17",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
