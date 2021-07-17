@@ -1,3 +1,2 @@
-30 src/roy/coder/A. Deadline.json
-1
+50 src/roy/coder/UVa1213_Sum_of_Different_Primes.json
 0
