@@ -1,10 +1,11 @@
 package roy.coder;
 
-import roy.coder.utils.algo.math.primes.Sieve;
+import roy.coder.utils.algo.recursion.tower_of_hanoi.TowerOfHanoi;
 
 public class Main {
+
     public static void main(String[] args) {
-        Sieve sieve = new Sieve(2);
-        System.out.println(sieve.isPrime(10));
+        TowerOfHanoi towerOfHanoi = new TowerOfHanoi(3, "1", "3", "2");
+        towerOfHanoi.solve();
     }
 }
