@@ -17,6 +17,15 @@ public class DirectionalArray {
         directionsArray.put(Direction.KNIGHT, new Integer[][]{{2, 1, -1, -2, -2, -1, 1, 2}, {1, 2, 2, 1, -1, -2, -2, -1}}); // KNIGHT - directions
     }
 
+    /**
+     * Why Two dimensions? Explanation:
+     * [0][] -> X direction
+     * [1][] -> Y direction
+     * for P(x, y), new coordinates will be: (x + [0][0], y + [1][0]), (x + [0][1], y + [1][1]) etc.
+     *
+     * @param direction desired direction
+     * @return possible moves for X and Y coordinate as 2-D array
+     */
     public static Integer[][] getDirections(Direction direction) {
         return directionsArray.get(direction);
     }
