@@ -1,0 +1,34 @@
+{
+  "name" : "UVa10452_Marcus",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "4\n5 8\nA#XMNXYY\nVOXZKKKK\nCHLLLLLL\nIEBNBNBN\n@YMMMMMM\n4 8\nVXX#AKKK\nCXLLVOHL\nXXBNBIEN\nMYMMM@MM\n4 5\nCA#KK\nLVOHL\nNBXEN\nMM@IM\n4 4\nCZ#A \nLHOV \nNEXX \nMI@Z \n",
+    "output" : "forth right forth forth left forth right\nforth right forth left left forth left\nright forth forth left left forth right\nleft forth forth right right forth left\n",
+    "index" : 0,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa10452_Marcus",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.24",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
