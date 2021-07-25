@@ -1,0 +1,39 @@
+{
+  "name" : "UVa10819 _Trouble_of_13_Dots",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "500 4\n100 2\n100 3\n200 3\n400 4",
+    "output" : "8\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "1801 3\n2000 3\n1900 1\n101 1\n1801 3\n2001 3\n1900 1\n101 1\n",
+    "output" : "2\n3\n",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa10819_Trouble_of_13_Dots",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.24",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "java.util.Scanner",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
