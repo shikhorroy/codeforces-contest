@@ -1,0 +1,39 @@
+{
+  "name" : "UVa_10664_Luggage",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "3\n1 2 1 2 1\n2 3 4 1 2 5 10 50 3 50\n3 5 2 7 1 7 5 2 8 9 1 25 15 8 3 1 38 45 8 1",
+    "output" : "NO\nYES\nYES\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "16\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2\n1 1\n2\n1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10\n1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10\n1 2 3 5 7 11 13 17 23\n1 2 3 5 7 11 13 17 23 29\n1 2 3 5 7 11 13 17 23 29 31\n1 2 3 5 7 11 13 17 23 29 31 37\n10 20 30 40 50 50\n1 15 25 35 45 55\n1 2 3 4 5 6 7 8 9 10 11 12 13 91\n1 1 2 3 4 5 6 7 8 9 10 11 12 13 90\n1 2 3 4 5 6 7 8 9 10 11 12 13 42 49\n1 2 3 4 5 6 7 8 9 10 11 12 13 93\n",
+    "output" : "YES\nNO\nYES\nNO\nYES\nYES\nYES\nNO\nYES\nNO\nYES\nNO\nYES\nYES\nYES\nNO\n",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.UVa_10664_Luggage",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.07.25",
+  "contestName" : "UVa OJ",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
