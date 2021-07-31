@@ -29,4 +29,12 @@ public class DirectionalArray {
     public static Integer[][] getDirections(Direction direction) {
         return directionsArray.get(direction);
     }
+
+    public static Integer[] getXDirections(Direction direction) {
+        return getDirections(direction)[0];
+    }
+
+    public static Integer[] getYDirections(Direction direction) {
+        return getDirections(direction)[1];
+    }
 }
