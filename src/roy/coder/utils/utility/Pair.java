@@ -1,30 +1,31 @@
 package roy.coder.utils.utility;
 
-public class Pair<K, V> implements Comparable<Pair> {
+import java.util.Objects;
 
-    public K key;
+public class Pair<F, S> implements Comparable<Pair<F, S>> {
 
-    public V value;
+    public F first;
+    public S second;
 
-    public Pair(K key, V value) {
-        this.key = key;
-        this.value = value;
+    public Pair(F first, S second) {
+        this.first = first;
+        this.second = second;
     }
 
-    public static <K, V> Pair of(K key, V value) {
-        return new Pair(key, value);
+    public static <K, V> Pair<K, V> of(K first, V second) {
+        return new Pair<K, V>(first, second);
     }
 
     @Override
     public String toString() {
-        return "(" + key + ", " + value + ")";
+        return "<" + first + ", " + second + ">";
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + (key != null ? key.hashCode() : 0);
-        hash = 31 * hash + (value != null ? value.hashCode() : 0);
+        hash = 31 * hash + (first != null ? first.hashCode() : 0);
+        hash = 31 * hash + (second != null ? second.hashCode() : 0);
         return hash;
     }
 
@@ -32,19 +33,15 @@ public class Pair<K, V> implements Comparable<Pair> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o instanceof Pair) {
-            Pair pair = (Pair) o;
-            if (key != null ? !key.equals(pair.key) : pair.key != null) return false;
-            if (value != null ? !value.equals(pair.value) : pair.value != null) return false;
-            return true;
+            Pair<F, S> pair = (Pair<F, S>) o;
+            if (!Objects.equals(first, pair.first)) return false;
+            return Objects.equals(second, pair.second);
         }
         return false;
     }
 
     @Override
     public int compareTo(Pair o) {
-        return (this.key.hashCode() < o.key.hashCode()) ? -1 :
-                (this.key.hashCode() > o.key.hashCode()) ? 1 :
-                        (this.value.hashCode() < o.value.hashCode()) ? -1 :
-                                (this.value.hashCode() > o.value.hashCode()) ? 1 : 0;
+        return Integer.compare(this.second.hashCode(), o.second.hashCode());
     }
 }
