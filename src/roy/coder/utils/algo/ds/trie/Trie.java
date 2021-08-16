@@ -1,11 +1,12 @@
-package roy.coder.utils.algo.ds;
+package roy.coder.utils.algo.ds.trie;
 
 import java.util.HashMap;
+import java.util.Map;
 
 class TrieNode {
-    private char value;
     private boolean isEnd;
-    private HashMap<Character, TrieNode> children;
+    private final char value;
+    private final Map<Character, TrieNode> children;
 
     public TrieNode(char ch) {
         value = ch;
@@ -25,13 +26,13 @@ class TrieNode {
         isEnd = val;
     }
 
-    public HashMap<Character, TrieNode> getChildren() {
+    public Map<Character, TrieNode> getChildren() {
         return children;
     }
 }
 
 public class Trie {
-    private TrieNode root;
+    private final TrieNode root;
 
     public Trie() {
         root = new TrieNode((char) 0);
@@ -39,7 +40,7 @@ public class Trie {
 
     public void add(String word) {
         TrieNode node = root;
-        HashMap<Character, TrieNode> child;
+        Map<Character, TrieNode> child;
 
         for (int i = 0, ln = word.length(); i < ln; ++i) {
             child = node.getChildren();
@@ -58,7 +59,7 @@ public class Trie {
 
     public boolean search(String key) {
         TrieNode node = root;
-        HashMap<Character, TrieNode> child;
+        Map<Character, TrieNode> child;
 
         for (int i = 0, ln = key.length(); i < ln; ++i) {
             child = node.getChildren();
@@ -73,7 +74,7 @@ public class Trie {
 
     public String getMatchedPrefixWord(String string) {
         TrieNode node = root;
-        HashMap<Character, TrieNode> child;
+        Map<Character, TrieNode> child;
         StringBuilder result = new StringBuilder();
 
         int prevMatch = 0;
