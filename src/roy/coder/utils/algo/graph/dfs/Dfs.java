@@ -2,34 +2,27 @@ package roy.coder.utils.algo.graph.dfs;
 
 import roy.coder.utils.algo.graph.Graph;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dfs {
 
     private static Graph g;
-    private static boolean visited[];
-
-    public boolean[] getVisited() {
-        return visited;
-    }
+    public static List<Boolean> visited;
 
     public static void run(Graph graph, int source) {
         g = graph;
-        visited = new boolean[g.adjacencyList.length];
-        DfsUtil(source);
+        visited = new ArrayList<>();
+        for (int i = 0, sz = g.adjacencyList.size(); i < sz; ++i) visited.add(false);
+
+        dfsUtil(source);
     }
 
-    private static void DfsUtil(int u) {
+    private static void dfsUtil(int u) {
         System.out.print(u + " ");
 
-        visited[u] = true;
-        List<Integer> list = g.adjacencyList[u];
-
-        for (int v : list) {
-            if (!visited[v]) {
-                DfsUtil(v);
-            }
-        }
+        visited.set(u, true);
+        List<Integer> list = g.adjacencyList.get(u);
+        for (int v : list) if (!visited.get(v)) dfsUtil(v);
     }
-
 }
