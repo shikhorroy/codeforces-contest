@@ -12,8 +12,8 @@ public class Pair<F, S> implements Comparable<Pair<F, S>> {
         this.second = second;
     }
 
-    public static <K, V> Pair<K, V> of(K first, V second) {
-        return new Pair<K, V>(first, second);
+    public static <F, S> Pair<F, S> of(F first, S second) {
+        return new Pair<>(first, second);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class Pair<F, S> implements Comparable<Pair<F, S>> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o instanceof Pair) {
-            Pair<F, S> pair = (Pair<F, S>) o;
+        if (o instanceof Pair<?, ?>) {
+            Pair<?, ?> pair = (Pair<?, ?>) o;
             if (!Objects.equals(first, pair.first)) return false;
             return Objects.equals(second, pair.second);
         }
@@ -42,6 +42,8 @@ public class Pair<F, S> implements Comparable<Pair<F, S>> {
 
     @Override
     public int compareTo(Pair o) {
-        return Integer.compare(this.second.hashCode(), o.second.hashCode());
+        int comparedVal = Integer.compare(this.first.hashCode(), o.first.hashCode());
+        if (comparedVal == 0) return Integer.compare(this.second.hashCode(), o.second.hashCode());
+        return comparedVal;
     }
 }
