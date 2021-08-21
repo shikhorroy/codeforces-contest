@@ -5,29 +5,32 @@ import java.util.List;
 
 public class Sieve {
     private final int n;
-    private final boolean[] isPrime;
+    private final List<Boolean> isPrime;
     private final List<Integer> primes = new ArrayList<>();
 
     private void initiate() {
         //~ implementation details: https://shikhorroy.wordpress.com/2013/11/12/wp-mep2mliv-5r/
-        if (n >= 0) isPrime[0] = false;
-        if (n >= 1) isPrime[1] = false;
-        if (n >= 2) isPrime[2] = true;
-        for (int i = 3; i <= n; i += 2) isPrime[i] = true;
-        for (int i = 4; i <= n; i += 2) isPrime[i] = false;
+        if (n >= 0) isPrime.set(0, false);
+        if (n >= 1) isPrime.set(1, false);
+        if (n >= 2) isPrime.set(2, true);
+        for (int i = 3; i <= n; i += 2) isPrime.set(i, true);
+        for (int i = 4; i <= n; i += 2) isPrime.set(i, true);
 
         if (n >= 2) primes.add(2);
         for (int x = 3; x <= n; x += 2) {//~ apply sieve method only for odd numbers
-            if (isPrime[x]) {
+            if (isPrime.get(x)) {
                 primes.add(x);
-                if (x * x <= n) for (int i = x * x; i <= n; i += (2 * x)) isPrime[i] = false;
+                if ((long) x * x <= n) for (int i = x * x; i <= n; i += (2 * x)) {
+                    isPrime.set(i, false);
+                }
             }
         }
     }
 
     public Sieve(int n) {
         this.n = n;
-        isPrime = new boolean[n + 1];
+        isPrime = new ArrayList<>();
+        for (int i = 0; i <= n; i++) isPrime.add(false);
         initiate();
     }
 
@@ -39,7 +42,7 @@ public class Sieve {
      */
     public boolean isPrime(int x) {
         if (x > n) throw new RuntimeException(x + " is out of range.");
-        return isPrime[x];
+        return isPrime.get(x);
     }
 
     public List<Integer> getPrimes() {
