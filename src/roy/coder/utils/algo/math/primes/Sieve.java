@@ -14,7 +14,6 @@ public class Sieve {
         if (n >= 1) isPrime.set(1, false);
         if (n >= 2) isPrime.set(2, true);
         for (int i = 3; i <= n; i += 2) isPrime.set(i, true);
-        for (int i = 4; i <= n; i += 2) isPrime.set(i, true);
 
         if (n >= 2) primes.add(2);
         for (int x = 3; x <= n; x += 2) {//~ apply sieve method only for odd numbers
