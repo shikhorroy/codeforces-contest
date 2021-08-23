@@ -8,7 +8,7 @@ public class Sieve {
     private final List<Boolean> isPrime;
     private final List<Integer> primes = new ArrayList<>();
 
-    private void initiate() {
+    private void generatePrimes() {
         //~ implementation details: https://shikhorroy.wordpress.com/2013/11/12/wp-mep2mliv-5r/
         if (n >= 0) isPrime.set(0, false);
         if (n >= 1) isPrime.set(1, false);
@@ -30,7 +30,7 @@ public class Sieve {
         this.n = n;
         isPrime = new ArrayList<>();
         for (int i = 0; i <= n; i++) isPrime.add(false);
-        initiate();
+        this.generatePrimes();
     }
 
     /**
@@ -66,5 +66,37 @@ public class Sieve {
      */
     public int count() {
         return this.primes.size();
+    }
+
+    public List<Integer> getPrimeDivisors(int number) {
+        List<Integer> primeDivisorList = new ArrayList<>();
+        this.primeDivisors(number, primeDivisorList);
+
+        return primeDivisorList;
+    }
+
+    public int getPrimeDivisorsCount(int number) {
+        return this.primeDivisors(number, null);
+    }
+
+    private int primeDivisors(int number, List<Integer> divisors) {
+        if (this.count() == 0) this.generatePrimes();//~ for safety purpose
+
+        boolean doGenerateList = divisors != null;
+
+        int temp = number, count = 0;
+        List<Integer> primeList = this.getPrimes();
+        for (Integer p : primeList) {
+            if ((long) p * p <= temp) while (number % p == 0) {
+                ++count;
+                number /= p;
+                if (doGenerateList) divisors.add(p);
+            }
+        }
+        if (number > 1) {
+            ++count;
+            if (doGenerateList) divisors.add(number);
+        }
+        return count;
     }
 }
