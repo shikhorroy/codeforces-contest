@@ -6,14 +6,27 @@ import java.util.InputMismatchException;
 
 public class InputReader {
 
-    private InputStream stream;
-    private byte[] buf = new byte[1024];
     private int curChar;
     private int numChars;
     private SpaceCharFilter filter;
+    private final InputStream stream;
+    private final byte[] buf = new byte[1024];
 
     public InputReader(InputStream stream) {
         this.stream = stream;
+    }
+
+    private long readWholeNumber(int c) {
+        long res = 0;
+        do {
+            if (c < '0' || c > '9') {
+                throw new InputMismatchException();
+            }
+            res *= 10;
+            res += c - '0';
+            c = read();
+        } while (!isSpaceChar(c));
+        return res;
     }
 
     public int read() {
@@ -45,22 +58,13 @@ public class InputReader {
             sgn = -1;
             c = read();
         }
-        int res = 0;
-        do {
-            if (c < '0' || c > '9') {
-                throw new InputMismatchException();
-            }
-            res *= 10;
-            res += c - '0';
-            c = read();
-        } while (!isSpaceChar(c));
+        int res = (int) readWholeNumber(c);
         return res * sgn;
     }
 
     public char readCharacter() {
         int c;
-        for (c = this.read(); isSpaceChar(c); c = this.read()) {
-        }
+        for (c = this.read(); isSpaceChar(c); c = this.read()) ;
         return (char) c;
     }
 
@@ -140,15 +144,7 @@ public class InputReader {
             sgn = -1;
             c = read();
         }
-        long res = 0;
-        do {
-            if (c < '0' || c > '9') {
-                throw new InputMismatchException();
-            }
-            res *= 10;
-            res += c - '0';
-            c = read();
-        } while (!isSpaceChar(c));
+        long res = readWholeNumber(c);
         return res * sgn;
     }
 
@@ -171,6 +167,6 @@ public class InputReader {
     }
 
     public interface SpaceCharFilter {
-        public boolean isSpaceChar(int ch);
+        boolean isSpaceChar(int ch);
     }
 }
