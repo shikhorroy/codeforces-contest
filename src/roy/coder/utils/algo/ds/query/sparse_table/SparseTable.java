@@ -15,8 +15,8 @@ import java.util.List;
  */
 public abstract class SparseTable<T> implements RangeQuery<T> {
 
-    private final List<T> itemList;
-    private final List<List<T>> table;
+    protected final List<T> itemList;
+    protected final List<List<T>> table;
 
     /**
      * Prepare spares table.
@@ -47,8 +47,9 @@ public abstract class SparseTable<T> implements RangeQuery<T> {
         //~ log2(x) = log(x) / log(2)
         int k = (int) (Math.log(r - l + 1) / Math.log(2));
 
+        int rightIndex = r - (1 << k) + 1;
         T value1 = this.table.get(k).get(l);
-        T value2 = this.table.get(k).get(r - (1 << k) + 1);
+        T value2 = this.table.get(k).get(rightIndex);
         return this.compute(value1, value2);
     }
 }
