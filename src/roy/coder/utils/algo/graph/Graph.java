@@ -9,7 +9,7 @@ public class Graph {
         UNIDIRECTIONAL, BIDIRECTIONAL
     }
 
-    private Type type;
+    protected Type type;
     public List<List<Integer>> adjacencyList;
 
     public void setType(Type type) {
