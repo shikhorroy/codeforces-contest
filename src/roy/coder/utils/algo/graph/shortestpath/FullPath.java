@@ -23,7 +23,7 @@ public class FullPath {
      *
      * @param destination destination node from source
      */
-    public static void printPathFrom(int destination) {
+    public static void printPath(int destination) {
         if (!visited.get(destination)) {
             System.out.println("No path!");
         } else {
