@@ -1,6 +1,6 @@
 package roy.coder.utils.utility.series;
 
-public class SeriesSumUtility {
+public class SeriesUtility {
 
     /**
      * ~ source: https://www.geeksforgeeks.org/calculate-xor-1-n/
