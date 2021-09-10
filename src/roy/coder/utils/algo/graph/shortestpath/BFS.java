@@ -7,6 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * BFS(Breadth-First Search) - The Shortest path algorithm in un-weighted graph.
+ * Complexity: O(V + E)
+ */
 public class BFS extends FullPath {
 
     private static Graph g;

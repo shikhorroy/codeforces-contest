@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * Dijkstra - The Shortest path algorithm in weighted graph.
+ * Complexity: O(VlogV + E)
+ */
 public class Dijkstra extends FullPath {
     private static WeightedGraph g;
     public static List<Integer> distance;
