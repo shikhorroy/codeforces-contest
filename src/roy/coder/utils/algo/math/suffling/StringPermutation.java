@@ -7,13 +7,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class StrPermutation {
+public class StringPermutation {
 
     private final char[] chars;
     private final Set<String> stringSet;
     private final List<String> stringList;
 
-    public StrPermutation(String string) {
+    public StringPermutation(String string) {
         chars = string.toCharArray();
 
         stringSet = new HashSet<>();
@@ -25,7 +25,7 @@ public class StrPermutation {
      *
      * @return all possible permutation.
      */
-    public StrPermutation permute() {
+    public StringPermutation permute() {
         if (this.count() == 0) this.permute(0, this.chars.length - 1);
         return this;
     }
@@ -42,7 +42,7 @@ public class StrPermutation {
         }
     }
 
-    public StrPermutation unique() {
+    public StringPermutation unique() {
         if (this.countDistinct() == 0) {
             this.permute();
             this.stringSet.addAll(this.stringList);
