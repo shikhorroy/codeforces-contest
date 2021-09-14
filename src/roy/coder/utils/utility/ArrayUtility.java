@@ -1,6 +1,8 @@
 package roy.coder.utils.utility;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ArrayUtility {
@@ -33,5 +35,22 @@ public class ArrayUtility {
         int odds = 0;
         for (T value : list) if (MathUtility.isOdd(value)) ++odds;
         return odds;
+    }
+
+    /**
+     * Count number frequency
+     * Complexity: O(n), n = length of itemList.
+     *
+     * @param itemList list of items of type T.
+     * @param <T>      of any type.
+     * @return Map of item count.
+     */
+    public static <T> Map<T, Integer> countFrequency(List<T> itemList) {
+        Map<T, Integer> frequency = new HashMap<>();
+        for (T t : itemList) {
+            if (!frequency.containsKey(t)) frequency.put(t, 0);
+            frequency.put(t, frequency.get(t) + 1);
+        }
+        return frequency;
     }
 }
