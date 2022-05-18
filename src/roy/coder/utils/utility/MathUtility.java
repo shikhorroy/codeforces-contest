@@ -17,4 +17,31 @@ public class MathUtility {
         long squareRoot = (long) Math.sqrt(longNumber);
         return squareRoot * squareRoot == longNumber;
     }
+
+    /**
+     * This will give the # of digits needed for a number num in format : base.
+     * time : O(1), space : O(1)
+     *
+     * @param number
+     * @param base
+     * @param <T>
+     * @return
+     */
+    public static <T> int countDigits(T number, int base) {
+        long v = Long.parseLong(number.toString());
+        return (int) (1 + Math.log(v) / Math.log(base));
+    }
+
+    /**
+     * This will give the # of digits needed for a number num in 10 base.
+     * time : O(1), space : O(1)
+     *
+     * @param number
+     * @param <T>
+     * @return
+     */
+    public static <T> int countDigits(T number) {
+        long v = Long.parseLong(number.toString());
+        return (int) (1 + Math.log(v) / Math.log(10));
+    }
 }
