@@ -32,7 +32,7 @@ public class MathUtility {
      */
     public static <T> int countDigits(T number, int base) {
         long v = Long.parseLong(number.toString());
-        return (int) (1 + Math.log(v) / Math.log(base));
+        return (int) (1 + Math.log10(v) / Math.log10(base));
     }
 
     /**
@@ -45,7 +45,7 @@ public class MathUtility {
      */
     public static <T> int countDigits(T number) {
         long v = Long.parseLong(number.toString());
-        return (int) (1 + Math.log(v) / Math.log(10));
+        return (int) (1 + Math.log10(v) / Math.log10(10));
     }
 
     /**
