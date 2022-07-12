@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class FullPath {
+public abstract class FullPath {
     public static List<Integer> parent;
     public static List<Boolean> visited;
 
