@@ -5,6 +5,8 @@ import roy.coder.utils.algo.graph.Graph;
 import roy.coder.utils.algo.graph.WeightedGraph;
 import roy.coder.utils.algo.graph.shortestpath.Dijkstra;
 import roy.coder.utils.algo.graph.shortestpath.FloydWarshall;
+import roy.coder.utils.algo.graph.tree.LCA;
+import roy.coder.utils.algo.graph.tree.Tree;
 
 import java.util.Arrays;
 
@@ -14,6 +16,32 @@ public class Main {
         System.out.println("~~ Welcome Bro ~~");
 //        testDijkstra();
 //        testFloydWarshall();
+//        testLCA();
+    }
+
+    private static void testLCA() {
+        System.out.println("~~ Finding LCA ~~");
+        Tree t = new Tree(17, 0);
+        t.addEdge(0, 1);
+        t.addEdge(1, 2);
+        t.addEdge(1, 8);
+        t.addEdge(2, 3);
+        t.addEdge(3, 4);
+        t.addEdge(4, 5);
+        t.addEdge(5, 6);
+        t.addEdge(6, 14);
+        t.addEdge(6, 7);
+        t.addEdge(1, 8);
+        t.addEdge(8, 9);
+        t.addEdge(9, 10);
+        t.addEdge(10, 11);
+        t.addEdge(11, 15);
+        t.addEdge(11, 12);
+        t.addEdge(12, 13);
+        t.addEdge(12, 16);
+
+        LCA lca = new LCA(t);
+        System.out.println(lca.lcaBetween(14, 14));
     }
 
     private static void testFloydWarshall() {
