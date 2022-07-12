@@ -78,7 +78,7 @@ public class LCA {
     /**
      * Complexity: O(log(n))
      */
-    public int lcaBetween(int node1, int node2) {
+    public int query(int node1, int node2) {
         if (level[node1] < level[node2]) {
             int tmp = node1;
             node1 = node2;
