@@ -17,6 +17,11 @@ public class LCA {
     private final Tree tree;
     private final int[] level;
     private final int[] parent;
+
+    /**
+     * <code>table[currNode][i]</code> - indicates <code>2<sup>i</sup>-th</code> node
+     * above from <code>currNode</code>.
+     */
     private final int[][] table;
 
     public LCA(Tree tree) {
@@ -42,10 +47,9 @@ public class LCA {
     private void binaryLifting(int parent) {
         List<Integer> children = tree.childrenOf(parent);
         for (int child : children) {
-            this.parent[child] = parent;
             level[child] = level[parent] + 1;
+            this.parent[child] = table[child][0] = parent;
 
-            table[child][0] = parent;
             for (int p = 1; p < this.powerOf2; p++)
                 if (table[child][p - 1] != SENTINEL)
                     table[child][p] = table[table[child][p - 1]][p - 1];
