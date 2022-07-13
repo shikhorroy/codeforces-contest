@@ -44,16 +44,26 @@ public class LCA {
         return power;
     }
 
-    private void binaryLifting(int parent) {
-        List<Integer> children = tree.childrenOf(parent);
+    /**
+     * DFS recursive function to populate level, parent and sparse table.
+     *
+     * @param currNode current node from where child nodes will be traversed.
+     */
+    private void binaryLifting(int currNode) {
+        List<Integer> children = tree.childrenOf(currNode);
         for (int child : children) {
-            level[child] = level[parent] + 1;
-            this.parent[child] = table[child][0] = parent;
+            level[child] = level[currNode] + 1;
+            //~ table[child][0] - indicates 2^0=1 level up node from child node,
+            //~ i.e. the parent node.
+            table[child][0] = this.parent[child] = currNode;
 
-            for (int p = 1; p < this.powerOf2; p++)
-                if (table[child][p - 1] != SENTINEL)
+            for (int p = 1; p < this.powerOf2; p++) {
+                if (table[child][p - 1] != SENTINEL) {
                     table[child][p] = table[table[child][p - 1]][p - 1];
-                else table[child][p] = SENTINEL;
+                } else {
+                    table[child][p] = SENTINEL;
+                }
+            }
 
             binaryLifting(child);
         }
