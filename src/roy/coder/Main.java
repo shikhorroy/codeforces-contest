@@ -41,7 +41,7 @@ public class Main {
         t.addEdge(12, 16);
 
         LCA lca = new LCA(t);
-        System.out.println(lca.lcaBetween(14, 14));
+        System.out.println(lca.findLCA(14, 14));
     }
 
     private static void testFloydWarshall() {

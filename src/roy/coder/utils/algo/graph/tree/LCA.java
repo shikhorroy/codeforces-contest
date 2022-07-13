@@ -1,6 +1,5 @@
 package roy.coder.utils.algo.graph.tree;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,7 +12,6 @@ import java.util.List;
 public class LCA {
     private final int SENTINEL = -1;
 
-    private final int nodes;
     private final int powerOf2;
 
     private final Tree tree;
@@ -24,61 +22,40 @@ public class LCA {
     public LCA(Tree tree) {
         this.tree = tree;
 
-        this.nodes = this.tree.getNodesCount();
-        this.powerOf2 = this.calculateRequiredPowerOf2For(this.nodes);
+        int nodes = this.tree.getNodesCount();
+        this.powerOf2 = this.calculateRequiredPowerOf2For(nodes);
 
         level = new int[nodes];
         parent = new int[nodes];
         table = new int[nodes][powerOf2];
 
-        preProcessing();
+        parent[tree.root] = SENTINEL;
+        binaryLifting(tree.root);
     }
 
-    /**
-     * Calculate power(P) of 2 so that, 2^P >= n
-     *
-     * @param n boundary to calculate power
-     * @return power of two required
-     */
     private int calculateRequiredPowerOf2For(int n) {
         int power = 1;
-        while ((1 << power) < n) power++;
+        while ((1 << power) <= n) power++;
         return power;
     }
 
-    //~ Complexity: O(n x log(n))
-    private void preProcessing() {
-        parent[tree.root] = SENTINEL;//~ root doesn't have parent.
-        dfs(tree.root);
-        generateTables();
-    }
-
-    //~ finding the levels and parents of each node in the tree.
-    private void dfs(int parent) {
+    private void binaryLifting(int parent) {
         List<Integer> children = tree.childrenOf(parent);
         for (int child : children) {
             this.parent[child] = parent;
             level[child] = level[parent] + 1;
 
-            dfs(child);
+            table[child][0] = parent;
+            for (int p = 1; p < this.powerOf2; p++)
+                if (table[child][p - 1] != SENTINEL)
+                    table[child][p] = table[table[child][p - 1]][p - 1];
+                else table[child][p] = SENTINEL;
+
+            binaryLifting(child);
         }
     }
 
-    private void generateTables() {
-        for (int[] t : table) Arrays.fill(t, SENTINEL);
-        for (int i = 0; i < this.nodes; i++)
-            table[i][0] = parent[i];
-
-        for (int p = 1; p < this.powerOf2; p++)
-            for (int i = 0; i < this.nodes; i++)
-                if (table[i][p - 1] != SENTINEL)
-                    table[i][p] = table[table[i][p - 1]][p - 1];
-    }
-
-    /**
-     * Complexity: O(log(n))
-     */
-    public int query(int node1, int node2) {
+    public int findLCA(int node1, int node2) {
         if (level[node1] < level[node2]) {
             int tmp = node1;
             node1 = node2;
@@ -100,5 +77,13 @@ public class LCA {
         }
 
         return parent[node1];
+    }
+
+    public int kthAncestor(int node, int k) {
+        if (k > level[node]) return SENTINEL;
+
+        int log = this.calculateRequiredPowerOf2For(k) + 1;
+        while (--log >= 0) if (((1 << log) & k) > 0) node = table[node][log];
+        return node;
     }
 }
