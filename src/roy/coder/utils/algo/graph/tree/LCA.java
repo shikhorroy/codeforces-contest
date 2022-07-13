@@ -52,6 +52,8 @@ public class LCA {
     private void binaryLifting(int currNode) {
         List<Integer> children = tree.childrenOf(currNode);
         for (int child : children) {
+            if (child == currNode) continue;//~ skip the back edge(child --> parent)
+
             level[child] = level[currNode] + 1;
             //~ table[child][0] - indicates 2^0=1 level up node from child node,
             //~ i.e. the parent node.
