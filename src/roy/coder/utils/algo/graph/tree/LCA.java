@@ -16,7 +16,7 @@ public class LCA {
 
     private final Tree tree;
     private final int[] level;
-    private final int[] parent;
+    private final boolean[] visited;
 
     /**
      * <code>table[currNode][i]</code> - indicates <code>2<sup>i</sup>-th</code> node
@@ -31,10 +31,10 @@ public class LCA {
         this.powerOf2 = this.calculateRequiredPowerOf2For(nodes);
 
         level = new int[nodes];
-        parent = new int[nodes];
+        visited = new boolean[nodes];
         table = new int[nodes][powerOf2];
 
-        parent[tree.root] = SENTINEL;
+        table[tree.root][0] = SENTINEL;
         binaryLifting(tree.root);
     }
 
@@ -50,14 +50,15 @@ public class LCA {
      * @param currNode current node from where child nodes will be traversed.
      */
     private void binaryLifting(int currNode) {
+        visited[currNode] = true;
         List<Integer> children = tree.childrenOf(currNode);
         for (int child : children) {
-            if (child == currNode) continue;//~ skip the back edge(child --> parent)
+            if (visited[child]) continue;
 
             level[child] = level[currNode] + 1;
             //~ table[child][0] - indicates 2^0=1 level up node from child node,
             //~ i.e. the parent node.
-            table[child][0] = this.parent[child] = currNode;
+            table[child][0] = currNode;
 
             for (int p = 1; p < this.powerOf2; p++) {
                 if (table[child][p - 1] != SENTINEL) {
@@ -79,20 +80,20 @@ public class LCA {
         }
 
         int log = this.calculateRequiredPowerOf2For(level[node1]);
-        for (int i = log; i >= 0; i--)
-            if (level[node1] - (1 << i) >= level[node2])
-                node1 = table[node1][i];
+        for (int p = log; p >= 0; p--)
+            if (level[node1] - (1 << p) >= level[node2])
+                node1 = table[node1][p];
 
         if (node1 == node2) return node1;
 
-        for (int i = log; i >= 0; i--) {
-            if (table[node1][i] != SENTINEL && table[node1][i] != table[node2][i]) {
-                node1 = table[node1][i];
-                node2 = table[node2][i];
+        for (int p = log; p >= 0; p--) {
+            if (table[node1][p] != SENTINEL && table[node1][p] != table[node2][p]) {
+                node1 = table[node1][p];
+                node2 = table[node2][p];
             }
         }
 
-        return parent[node1];
+        return table[node1][0];
     }
 
     public int kthAncestor(int node, int k) {
