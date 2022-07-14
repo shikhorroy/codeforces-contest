@@ -38,6 +38,11 @@ public class LCA {
         binaryLifting(tree.root);
     }
 
+    public int levelOf(int node) {
+        if (node > tree.getNodesCount()) throw new AssertionError("node " + node + " - is out of bound");
+        return level[node];
+    }
+
     private int calculateRequiredPowerOf2For(int n) {
         int power = 1;
         while ((1 << power) <= n) power++;
