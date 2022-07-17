@@ -1,14 +1,11 @@
 package roy.coder.utils.algo.dirarray;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DirectionalArray {
-
-    public enum Direction {
-        FOUR, EIGHT, KNIGHT
-    }
-
     private static final Map<Direction, Integer[][]> directionsArray = new HashMap<>();
 
     static {
@@ -17,24 +14,28 @@ public class DirectionalArray {
         directionsArray.put(Direction.KNIGHT, new Integer[][]{{2, 1, -1, -2, -2, -1, 1, 2}, {1, 2, 2, 1, -1, -2, -2, -1}}); // KNIGHT - directions
     }
 
+    private static Integer[] getXDirections(Direction direction) {
+        return directionsArray.get(direction)[0];
+    }
+
+    private static Integer[] getYDirections(Direction direction) {
+        return directionsArray.get(direction)[1];
+    }
+
     /**
-     * Why Two dimensions? Explanation:
-     * [0][] -> X direction
-     * [1][] -> Y direction
-     * for P(x, y), new coordinates will be: (x + [0][0], y + [1][0]), (x + [0][1], y + [1][1]) etc.
+     * Give the list of possible ways to move.
      *
-     * @param direction desired direction
-     * @return possible moves for X and Y coordinate as 2-D array
+     * @param direction requested direction.
+     * @return list of Move(dx, dy)
      */
-    public static Integer[][] getDirections(Direction direction) {
-        return directionsArray.get(direction);
-    }
+    public static List<Move> getMoves(Direction direction) {
+        List<Move> moves = new ArrayList<>();
+        Integer[] xDirections = getXDirections(direction);
+        Integer[] yDirections = getYDirections(direction);
 
-    public static Integer[] getXDirections(Direction direction) {
-        return getDirections(direction)[0];
-    }
-
-    public static Integer[] getYDirections(Direction direction) {
-        return getDirections(direction)[1];
+        for (int i = 0, ln = xDirections.length; i < ln; i++) {
+            moves.add(Move.of(xDirections[i], yDirections[i]));
+        }
+        return moves;
     }
 }
