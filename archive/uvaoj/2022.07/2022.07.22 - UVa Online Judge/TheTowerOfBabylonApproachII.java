@@ -6,8 +6,7 @@ import roy.coder.utils.io.OutputWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Uva437 {
-
+public class TheTowerOfBabylonApproachII {
     Integer[] memo;
     List<Block> blockList;
 

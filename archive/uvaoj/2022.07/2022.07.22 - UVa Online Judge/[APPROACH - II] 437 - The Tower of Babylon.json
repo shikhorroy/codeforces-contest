@@ -1,5 +1,5 @@
 {
-  "name" : "Uva 437",
+  "name" : "[APPROACH - II] 437 - The Tower of Babylon",
   "testType" : "SINGLE",
   "input" : {
     "type" : "STANDARD",
@@ -10,20 +10,20 @@
     "fileName" : "output.txt"
   },
   "tests" : [ {
-    "input" : "1\n10 20 30\n2\n6 8 10\n5 5 5\n7\n1 1 1\n2 2 2\n3 3 3\n4 4 4\n5 5 5\n6 6 6\n7 7 7\n5\n31 41 59\n26 53 58\n97 93 23\n84 62 64\n33 83 27\n0\n",
-    "output" : "Case 1: maximum height = 40\nCase 2: maximum height = 21\nCase 3: maximum height = 28\nCase 4: maximum height = 342\n",
+    "input" : "\n1\n10 20 30\n2\n6 8 10\n5 5 5\n7\n1 1 1\n2 2 2\n3 3 3\n4 4 4\n5 5 5\n6 6 6\n7 7 7\n5\n31 41 59\n26 53 58\n97 93 23\n84 62 64\n33 83 27\n0\n",
+    "output" : "\nCase 1: maximum height = 40\nCase 2: maximum height = 21\nCase 3: maximum height = 28\nCase 4: maximum height = 342\n",
     "index" : 0,
     "active" : true
   } ],
   "location" : "src/roy/coder",
-  "vmArgs" : "-Xmx256m -Xss64m",
+  "vmArgs" : "-Xmx32M",
   "mainClass" : "Main",
-  "taskClass" : "roy.coder.Uva437",
+  "taskClass" : "roy.coder.TheTowerOfBabylonApproachII",
   "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
   "checkerParameters" : "",
   "testClasses" : [ ],
-  "date" : "2022.07.21",
-  "contestName" : "UVa OJ",
+  "date" : "2022.07.22",
+  "contestName" : "UVa Online Judge",
   "truncate" : true,
   "inputClass" : "roy.coder.utils.io.InputReader",
   "outputClass" : "roy.coder.utils.io.OutputWriter",
