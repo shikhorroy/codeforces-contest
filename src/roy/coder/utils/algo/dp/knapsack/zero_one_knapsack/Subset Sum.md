@@ -29,3 +29,7 @@ Constraints
     1 <= N <= 100
     1<= arr[i] <= 100
     1<= sum <= 10^5
+
+> ### Problems
+
+* [[CSES] Money Sums](https://cses.fi/problemset/task/1093)

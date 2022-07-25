@@ -3,7 +3,7 @@ package roy.coder.utils.algo.dp.knapsack.zero_one_knapsack.subsetsum;
 import java.util.List;
 
 public class SubsetSum {
-    private boolean[][] dp;
+    public boolean[][] dp;
 
     private final int n;
     private final int target;
