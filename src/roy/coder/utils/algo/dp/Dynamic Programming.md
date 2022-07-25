@@ -29,7 +29,7 @@ DP generally solves two types of problems:
 * Count number of subset with given difference / Target
   sum [<a href="https://practice.geeksforgeeks.org/problems/target-sum-1626326450/1">link</a>]
 
-### 2. Unbounded Knapsack [<a href="https://practice.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1">link</a>]
+### [2. Unbounded Knapsack](./knapsack/un_bounded_knapsack/Unbounded%20Knapsack.md)
 
 #### <u>Variations</u>
 
@@ -39,4 +39,4 @@ DP generally solves two types of problems:
   coins [<a href="https://practice.geeksforgeeks.org/problems/number-of-coins1824/1">link</a>]
     * <a href="https://leetcode.com/problems/coin-change/">LeetCode - 322. Coin Change</a>
 
-### 2. Longest Common Subsequence (LCS) [<a href="">link</a>]
+### [3. Longest Common Subsequence (LCS)](./longest_common_subsequence/LCS.md)
