@@ -1,7 +1,5 @@
 # Dynamic Programming (DP)
 
-<hr>
-
 DP always tries all possible ways and doesn't recalculate if a sub-problem is already solved.
 
 DP generally solves two types of problems:
@@ -12,8 +10,6 @@ DP generally solves two types of problems:
 > #### Tips to think if a problem can be solved using DP / When should you consider DP?
 > * There should have some choices
 > * You will be asked to find optimal or counting solution
-
-<hr>
 
 ## Different Types of DP Problems:
 
