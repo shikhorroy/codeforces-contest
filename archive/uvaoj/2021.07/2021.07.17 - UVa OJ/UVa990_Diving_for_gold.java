@@ -1,6 +1,6 @@
 package roy.coder;
 
-import roy.coder.utils.algo.dp.zero_one_knapsack.ZeroOneKnapsack;
+import roy.coder.utils.algo.dp.knapsack.zero_one_knapsack.ZeroOneKnapsack;
 import roy.coder.utils.io.OutputWriter;
 
 import java.util.ArrayList;
