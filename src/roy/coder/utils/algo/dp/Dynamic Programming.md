@@ -19,7 +19,7 @@ DP generally solves two types of problems:
 
 * [Subset sum](./knapsack/zero_one_knapsack/Subset%20Sum.md)
 * Equal subset sum partition [<a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1">link</a>]
-* Count subset sum [<a href="https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1">link</a>]
+* [Count subset sum](./knapsack/zero_one_knapsack/Subset%20Sum%20Count.md)
 * Minimum subset sum
   partition [<a href="https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1">link</a>]
 * Count number of subset with given difference / Target
