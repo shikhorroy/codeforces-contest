@@ -27,9 +27,10 @@ public class SubsetSum {
         initDP();
 
         for (int i = 1; i <= n; i++) {
+            int curr = array.get(i - 1);
             for (int s = 1; s <= target; s++) {
-                if (array.get(i - 1) <= s) {
-                    dp[i][s] = dp[i - 1][s - array.get(i - 1)] || dp[i - 1][s];
+                if (curr <= s) {
+                    dp[i][s] = dp[i - 1][s - curr] || dp[i - 1][s];
                 } else dp[i][s] = dp[i - 1][s];
             }
         }
