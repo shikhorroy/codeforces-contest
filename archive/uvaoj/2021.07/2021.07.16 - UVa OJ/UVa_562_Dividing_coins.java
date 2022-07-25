@@ -1,6 +1,6 @@
 package roy.coder;
 
-import roy.coder.utils.algo.dp.zero_one_knapsack.SubsetSum;
+import roy.coder.utils.algo.dp.knapsack.zero_one_knapsack.SubsetSum;
 import roy.coder.utils.io.InputReader;
 import roy.coder.utils.io.OutputWriter;
 
