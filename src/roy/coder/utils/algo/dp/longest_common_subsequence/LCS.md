@@ -1,3 +1,1 @@
 # Longest Common Subsequence (LCS)
-
----

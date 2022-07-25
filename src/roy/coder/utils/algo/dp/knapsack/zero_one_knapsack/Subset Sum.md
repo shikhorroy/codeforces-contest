@@ -1,7 +1,5 @@
 # [DP] Subset sum
 
----
-
 > ### [[GFG] Subset Sum Problem](https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1)
 
 Given an array of non-negative integers, and a value **sum**, determine if there is a subset of the given set with sum
