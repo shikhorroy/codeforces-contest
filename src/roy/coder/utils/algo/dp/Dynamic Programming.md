@@ -36,3 +36,5 @@ DP generally solves two types of problems:
     * <a href="https://leetcode.com/problems/coin-change/">LeetCode - 322. Coin Change</a>
 
 ### [3. Longest Common Subsequence (LCS)](./longest_common_subsequence/LCS.md)
+
+### [4. Miscellaneous](./others/Miscellaneous.md)
