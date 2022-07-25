@@ -17,11 +17,11 @@ DP generally solves two types of problems:
 
 ## Different Types of DP Problems:
 
-### [1. O/1 Knapsack](./knapsack/zero_one_knapsack/Zero-one Knapsack.md)
+### [1. O/1 Knapsack](./knapsack/zero_one_knapsack/Zero-one%20Knapsack.md)
 
 #### <u>Variations</u>
 
-* [Subset sum](./knapsack/zero_one_knapsack/Subset Sum.md)
+* [Subset sum](./knapsack/zero_one_knapsack/Subset%20Sum.md)
 * Equal subset sum partition [<a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1">link</a>]
 * Count subset sum [<a href="https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1">link</a>]
 * Minimum subset sum
