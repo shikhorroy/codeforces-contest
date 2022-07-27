@@ -32,3 +32,6 @@ Example 2:
     number of multiplications are -
     10*30*5 + 10*5*60 = 4500.
 
+> ### Problems
+
+> ### [[GFG] Palindrome Partitioning](https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1)
