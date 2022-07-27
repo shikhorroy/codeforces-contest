@@ -26,7 +26,7 @@ public class PalindromePartitioning {
         if (memo[i][j] != -1) return memo[i][j];
 
         int minPartitions = Integer.MAX_VALUE;
-        for (int k = i; k < j; k++) {
+        for (int k = i; k <= j - 1; k++) {
             int partitionsCount = recursiveDP(i, k) + recursiveDP(k + 1, j) + 1;
             minPartitions = Math.min(minPartitions, partitionsCount);
         }
