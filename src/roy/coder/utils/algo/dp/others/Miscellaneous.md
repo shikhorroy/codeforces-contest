@@ -32,3 +32,10 @@ static class RemovalGame {
     }
 }
 ```
+
+> ### [[LeetCode] 70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+
+> ### [[LeetCode] 746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
+
+> ### [[LeetCode] 740. Delete and Earn](https://leetcode.com/problems/delete-and-earn/)
+> ### [[CF - 455] A. Boredom](https://codeforces.com/contest/455/problem/A)
