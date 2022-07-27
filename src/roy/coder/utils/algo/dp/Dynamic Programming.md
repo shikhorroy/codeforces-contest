@@ -37,4 +37,6 @@ DP generally solves two types of problems:
 
 ### [3. Longest Common Subsequence (LCS)](./longest_common_subsequence/LCS.md)
 
-### [4. Miscellaneous](./others/Miscellaneous.md)
+### [4. Matrix Chain Multiplication (MCM)](./mcm/Matrix%20Chain%20Multiplication.md)
+
+### [5. Miscellaneous](./others/Miscellaneous.md)
