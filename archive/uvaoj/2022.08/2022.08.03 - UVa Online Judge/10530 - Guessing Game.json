@@ -1,0 +1,44 @@
+{
+  "name" : "10530 - Guessing Game",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "10\ntoo high\n3\ntoo low\n4\ntoo high\n2\nright on\n5\ntoo low\n7\ntoo high\n6\nright on\n0\n",
+    "output" : "Stan is dishonest\nStan may be honest\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "10\nright on\n0",
+    "output" : "Stan may be honest",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "5\ntoo high\n6\ntoo low\n5\nright on\n5\ntoo high\n6\nright on\n0",
+    "output" : "Stan is dishonest\nStan is dishonest\n",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx32M",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.GuessingGame",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2022.08.03",
+  "contestName" : "UVa Online Judge",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
