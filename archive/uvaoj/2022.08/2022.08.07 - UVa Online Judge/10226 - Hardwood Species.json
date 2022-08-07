@@ -1,0 +1,44 @@
+{
+  "name" : "10226 - Hardwood Species",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "1\n\nRed Alder\nAsh\nAspen\nBasswood\nAsh\nBeech\nYellow Birch\nAsh\nCherry\nCottonwood\nAsh\nCypress\nRed Elm\nGum\nHackberry\nWhite Oak\nHickory\nPecan\nHard Maple\nWhite Oak\nSoft Maple\nRed Oak\nRed Oak\nWhite Oak\nPoplan\nSassafras\nSycamore\nBlack Walnut\nWillow\n",
+    "output" : "Ash 13.7931\nAspen 3.4483\nBasswood 3.4483\nBeech 3.4483\nBlack Walnut 3.4483\nCherry 3.4483\nCottonwood 3.4483\nCypress 3.4483\nGum 3.4483\nHackberry 3.4483\nHard Maple 3.4483\nHickory 3.4483\nPecan 3.4483\nPoplan 3.4483\nRed Alder 3.4483\nRed Elm 3.4483\nRed Oak 6.8966\nSassafras 3.4483\nSoft Maple 3.4483\nSycamore 3.4483\nWhite Oak 10.3448\nWillow 3.4483\nYellow Birch 3.4483\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "2\n\nabc\nedf\nhytg\nhytg\n\nlalala\npapapa\nytytyt\nhrhrhr\nblablabla\ndahdahdah\n",
+    "output" : "abc 25.0000\nedf 25.0000\nhytg 50.0000\n\nblablabla 16.6667\ndahdahdah 16.6667\nhrhrhr 16.6667\nlalala 16.6667\npapapa 16.6667\nytytyt 16.6667\n",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "2\n\nabc\n\nlalala\n",
+    "output" : "abc 100.0000\n\nlalala 100.0000",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx32M",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.HardwoodSpecies",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2022.08.07",
+  "contestName" : "UVa Online Judge",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
