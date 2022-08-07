@@ -1,0 +1,44 @@
+{
+  "name" : "170 - Clock Patience",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "TS QC 8S 8D QH 2D 3H KH 9H 2H TH KS KC\n9D JH 7H JD 2S QS TD 2C 4H 5H AD 4D 5D\n6D 4S 9S 5S 7S JS 8H 3D 8C 3S 4C 6S 9C\nAS 7C AH 6H KD JC 7D AC 5C TC QD 6C 3C\n#",
+    "output" : "44,KD\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "AS 7C AH 6H KD JC 7D AC 5C TC QD 6C 3C\n6D 4S 9S 5S 7S JS 8H 3D 8C 3S 4C 6S 9C\n9D JH 7H JD 2S QS TD 2C 4H 5H AD 4D 5D\nTS QC 8S 8D QH 2D 3H KH 9H 2H TH KS KC\n#\n",
+    "output" : "51,KS",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "TS QC 8S 8D QH 2D 3H KH 9H 2H TH KS KC \n9D JH 7H JD 2S QS TD 2C 4H 5H AD 4D 5D \n6D 4S 9S 5S 7S JS 8H 3D 8C 3S 4C 6S 9C \nAS 7C AH 6H KD JC 7D AC 5C TC QD 6C 3C \nKS QS JS TS 9S 8S 7S 6S 5S 4S 3S 2S AS \nKH QH JH TH 9H 8H 7H 6H 5H 4H 3H 2H AH \nKC QC JC TC 9C 8C 7C 6C 5C 4C 3C 2C AC \nKD QD JD TD 9D 8D 7D 6D 5D 4D 3D 2D AD \n3C 6C QD TC 5C AC 7D JC KD 6H AH 7C AS \n9C 6S 4C 3S 8C 3D 8H JS 7S 5S 9S 4S 6D \n5D 4D AD 5H 4H 2C TD QS 2S JD 7H JH 9D \nKC KS TH 2H 9H KH 3H 2D QH 8D 8S QC TS \nKS QS JS TS 9S 8S 7S 6S 5S 4S 3S 2S AS \nQH JH TH 9H 8H 7H 6H 5H 4H 3H 2H AH KH \nJC TC 9C 8C 7C 6C 5C 4C 3C 2C AC KC QC \nTD 9D 8D 7D 6D 5D 4D 3D 2D AD KD QD JD \n#\n",
+    "output" : "44,KD\n04,KD\n51,KC\n52,KD\n",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx32M",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.ClockPatience",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2022.08.05",
+  "contestName" : "UVa Online Judge",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
