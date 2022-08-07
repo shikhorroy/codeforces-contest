@@ -98,14 +98,4 @@ public class MathUtility {
     public boolean isPowerOf2(long n) {
         return (n != 0 && (n & (n - 1)) == 0);
     }
-
-    /**
-     * Find if a number is power of 2.
-     *
-     * @param n numbers to check
-     * @return boolean
-     */
-    public boolean isPowerOf2(int n) {
-        return (n != 0 && (n & (n - 1)) == 0);
-    }
 }
