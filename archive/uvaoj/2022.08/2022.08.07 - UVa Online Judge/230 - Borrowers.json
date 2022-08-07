@@ -1,0 +1,44 @@
+{
+  "name" : "230 - Borrowers",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "\"The Canterbury Tales\" by Chaucer, G.\n\"Algorithms\" by Sedgewick, R.\n\"The C Programming Language\" by Kernighan, B. and Ritchie, D.\nEND\nBORROW \"Algorithms\"\nBORROW \"The C Programming Language\"\nRETURN \"Algorithms\"\nRETURN \"The C Programming Language\"\nSHELVE\nEND\n",
+    "output" : "Put \"The C Programming Language\" after \"The Canterbury Tales\"\nPut \"Algorithms\" after \"The C Programming Language\"\nEND\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "\"b\" by c.\n\"a\" by b.\n\"c\" by d.\nEND\nBORROW \"b\"\nRETURN \"b\"\nSHELVE\nEND",
+    "output" : "Put \"b\" after \"a\"\nEND\n",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "\"The Canterbury Tales\" by Chaucer, G.\n\"The Canterbury Taless\" by Chaucer, B.\n\"Algorithms\" by Sedgewick, R.\n\"The C Programming Language\" by Kernighan, B. and Ritchiee, D.\n\"The C Programming Languag\" by Kernighan, B. and Ritchiee, D.\n\"The D Programming Language\" by Kernighan, B. and Ritchiee, D.\n\"A House for Mr. Biswas\" by Naipaul, V.S.\n\"A Congo Diary\" by Naipaul, V.S.\nEND\nBORROW \"Algorithms\"\nBORROW \"The C Programming Language\"\nBORROW \"The C Programming Languag\"\nBORROW \"The Canterbury Taless\"\nSHELVE\nRETURN \"Algorithms\"\nRETURN \"The Canterbury Taless\"\nSHELVE\nRETURN \"The C Programming Languag\"\nSHELVE\nBORROW \"The C Programming Languag\"\nBORROW \"The Canterbury Taless\"\nBORROW \"A House for Mr. Biswas\"\nRETURN \"The Canterbury Taless\"\nSHELVE\nRETURN \"The C Programming Language\"\nRETURN \"A House for Mr. Biswas\"\nSHELVE\nEND\n",
+    "output" : "END\nPut \"The Canterbury Taless\" first\nPut \"Algorithms\" after \"A House for Mr. Biswas\"\nEND\nPut \"The C Programming Languag\" after \"The Canterbury Tales\"\nEND\nPut \"The Canterbury Taless\" first\nEND\nPut \"The C Programming Language\" after \"The Canterbury Tales\"\nPut \"A House for Mr. Biswas\" after \"A Congo Diary\"\nEND\n",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/roy/coder",
+  "vmArgs" : "-Xmx32M",
+  "mainClass" : "Main",
+  "taskClass" : "roy.coder.Borrowers",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2022.08.07",
+  "contestName" : "UVa Online Judge",
+  "truncate" : true,
+  "inputClass" : "roy.coder.utils.io.InputReader",
+  "outputClass" : "roy.coder.utils.io.OutputWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
