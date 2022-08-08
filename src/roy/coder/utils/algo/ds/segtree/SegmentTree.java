@@ -3,16 +3,16 @@ package roy.coder.utils.algo.ds.segtree;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SegmentTree {
+public abstract class SegmentTree<T> {
 
-    protected final List<Integer> tree;
-    private final List<Integer> array;
+    private final List<T> array;
+    protected final List<T> tree;
 
     /**
      * Return value for an invalid range query.<br>
      * e.g. this should be zero(0) for range sum query, max infinity if range minimum query etc.
      */
-    public abstract int invalidReturn();
+    public abstract T invalidReturn();
 
     /**
      * Expected calculation for range query.<br>
@@ -23,16 +23,16 @@ public abstract class SegmentTree {
      * @param rightValue right subtree value.
      * @return expected result after calculation.
      */
-    public abstract int calculate(int leftValue, int rightValue);
+    public abstract T calculate(T leftValue, T rightValue);
 
-    public void applyChange(int value, int currIndex) {
+    public void applyChange(T value, int currIndex) {
         tree.set(currIndex, value);
     }
 
-    public SegmentTree(List<Integer> array) {
+    public SegmentTree(List<T> array) {
         this.array = array;
         tree = new ArrayList<>();
-        for (int i = 0, sz = 4 * array.size() + 1; i < sz; i++) tree.add(0);
+        for (int i = 0, sz = 4 * array.size() + 1; i < sz; i++) tree.add(null);
 
         this.buildTree(0, array.size() - 1, 1);
     }
@@ -56,7 +56,7 @@ public abstract class SegmentTree {
      * @param end   0 base end index
      * @return expected query result
      */
-    public int query(int start, int end) {
+    public T query(int start, int end) {
         return query(0, array.size() - 1, new Query(start, end), 1);
     }
 
@@ -66,7 +66,7 @@ public abstract class SegmentTree {
      * @param index zero(0) based index.
      * @param val   expected value to be updated.
      */
-    public void update(int index, int val) {
+    public void update(int index, T val) {
         update(0, array.size() - 1, new Update(index, val), 1);
     }
 
@@ -84,7 +84,7 @@ public abstract class SegmentTree {
         }
     }
 
-    private int query(int start, int end, Query query, int currIndex) {// O(log n)
+    private T query(int start, int end, Query query, int currIndex) {// O(log n)
         //~ complete overlap: inside query range
         // query:    |2------------5|
         // case 01:  |   3------4   | start = 3, end = 4
@@ -102,8 +102,8 @@ public abstract class SegmentTree {
         // case 01:  |1-------4               | start = 1, end = 4
         // case 02:  |              5--------8| start = 5, end = 8
         int mid = (start + end) >> 1;
-        int left = query(start, mid, query, left(currIndex));
-        int right = query(mid + 1, end, query, right(currIndex));
+        T left = query(start, mid, query, left(currIndex));
+        T right = query(mid + 1, end, query, right(currIndex));
 
         return calculate(left, right);
     }
@@ -127,11 +127,11 @@ public abstract class SegmentTree {
         }
     }
 
-    private static class Update {
+    private class Update {
+        T value;
         int index;
-        int value;
 
-        public Update(int index, int value) {
+        public Update(int index, T value) {
             this.index = index;
             this.value = value;
         }
