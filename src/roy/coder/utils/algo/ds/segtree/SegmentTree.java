@@ -109,11 +109,11 @@ public abstract class SegmentTree<T> {
     }
 
     //~ utilities: start ~//
-    public int left(int index) {
+    private int left(int index) {
         return (index << 1);
     }
 
-    public int right(int index) {
+    private int right(int index) {
         return (index << 1) + 1;
     }
 
