@@ -136,8 +136,7 @@ public abstract class SegmentTree<T> {
     }
 
     private static class Query {
-        int start;
-        int end;
+        int start, end;
 
         Query(int start, int end) {
             this.start = start;
