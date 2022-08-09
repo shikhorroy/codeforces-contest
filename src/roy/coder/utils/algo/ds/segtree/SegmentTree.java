@@ -70,9 +70,27 @@ public abstract class SegmentTree<T> {
         update(0, array.size() - 1, new Update(index, val), 1);
     }
 
+    public void update(int start, int end, T val) {
+        update(0, array.size() - 1, new RangeUpdate(start, end, val), 1);
+    }
+
     private void update(int start, int end, Update update, int currIndex) {
         //~ index out of bound:
-        if (update.index < start || end < update.index) return;
+        if (end < update.index || update.index < start) return;
+
+        if (start == end) applyChange(update.value, currIndex);
+        else {
+            int mid = (start + end) >> 1;
+            update(start, mid, update, left(currIndex));
+            update(mid + 1, end, update, right(currIndex));
+
+            tree.set(currIndex, this.calculate(tree.get(left(currIndex)), tree.get(right(currIndex))));
+        }
+    }
+
+    private void update(int start, int end, RangeUpdate update, int currIndex) {
+        //~ index out of bound:
+        if (end < update.start || update.end < start) return;
 
         if (start == end) applyChange(update.value, currIndex);
         else {
@@ -133,6 +151,17 @@ public abstract class SegmentTree<T> {
 
         Update(int index, T value) {
             this.index = index;
+            this.value = value;
+        }
+    }
+
+    private class RangeUpdate {
+        T value;
+        int start, end;
+
+        RangeUpdate(int start, int end, T value) {
+            this.start = start;
+            this.end = end;
             this.value = value;
         }
     }
