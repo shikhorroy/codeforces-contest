@@ -131,7 +131,7 @@ public abstract class SegmentTree<T> {
         T value;
         int index;
 
-        public Update(int index, T value) {
+        Update(int index, T value) {
             this.index = index;
             this.value = value;
         }
