@@ -15,37 +15,25 @@ public class MathUtility {
         return ((longNumber & 1) == 0);
     }
 
-    public static <T> boolean isPerfectSquare(T number) {
-        long longNumber = Long.parseLong(number.toString());
-        long squareRoot = (long) Math.sqrt(longNumber);
-        return squareRoot * squareRoot == longNumber;
+    public static boolean isPerfectSquare(long number) {
+        long squareRoot = (long) Math.sqrt(number);
+        return squareRoot * squareRoot == number;
     }
 
     /**
      * This will give the # of digits needed for a number num in format : base.
      * time : O(1), space : O(1)
-     *
-     * @param number
-     * @param base
-     * @param <T>
-     * @return
      */
-    public static <T> int countDigits(T number, int base) {
-        long v = Long.parseLong(number.toString());
-        return (int) (1 + Math.log10(v) / Math.log10(base));
+    public static int countDigits(long number, int base) {
+        return (int) (1 + Math.log10(number) / Math.log10(base));
     }
 
     /**
      * This will give the # of digits needed for a number num in 10 base.
      * time : O(1), space : O(1)
-     *
-     * @param number
-     * @param <T>
-     * @return
      */
-    public static <T> int countDigits(T number) {
-        long v = Long.parseLong(number.toString());
-        return (int) (1 + Math.log10(v) / Math.log10(10));
+    public static int countDigits(long number) {
+        return (int) (1 + Math.log10(number) / Math.log10(10));
     }
 
     /**
@@ -56,8 +44,6 @@ public class MathUtility {
      * Time Complexity: O(n!)
      *
      * @param list - list data.
-     * @param <T>
-     * @return
      */
     public static <T extends Comparable<T>> boolean findNextPermutation(List<T> list) {
         if (list == null || list.size() <= 1) return false;
@@ -95,7 +81,34 @@ public class MathUtility {
      * @param n numbers to check
      * @return boolean
      */
-    public boolean isPowerOf2(long n) {
+    public static boolean isPowerOf2(long n) {
         return (n != 0 && (n & (n - 1)) == 0);
+    }
+
+    public static boolean isFibonacci(long n) {
+        return isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4);
+    }
+
+
+    /**
+     * Sqrt(n) complexity solution.
+     */
+    public static boolean isPrime(long n) {
+        if (n <= 1) return false;
+        for (long i = 3; i * i <= n; i += 2)
+            if (n % i == 0) return false;
+
+        return true;
+    }
+
+    /**
+     * Sqrt(n) complexity solution.
+     */
+    public static boolean isComposite(long n) {
+        if (n <= 2) return false;
+        for (long i = 2; i * i <= n; i++)
+            if (n % i == 0) return true;
+
+        return false;
     }
 }
