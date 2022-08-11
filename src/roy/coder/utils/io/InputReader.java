@@ -1,8 +1,12 @@
 package roy.coder.utils.io;
 
+import roy.coder.utils.utility.Pair;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 
 public class InputReader {
 
@@ -169,4 +173,84 @@ public class InputReader {
     public interface SpaceCharFilter {
         boolean isSpaceChar(int ch);
     }
+
+    //~ Input Helper Methods :: start ~//
+    public List<Integer> readIntegerList(int n) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(readInteger());
+        return list;
+    }
+
+    public int[] readIntegerArray(int n) {
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) arr[i] = readInteger();
+        return arr;
+    }
+
+    public List<Long> readLongList(int n) {
+        List<Long> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(readLong());
+        return list;
+    }
+
+    public long[] readLongArray(int n) {
+        long[] arr = new long[n];
+        for (int i = 0; i < n; i++) arr[i] = readLong();
+        return arr;
+    }
+
+    public List<Double> readDoubleList(int n) {
+        List<Double> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(readDouble());
+        return list;
+    }
+
+    public double[] readDoubleArray(int n) {
+        double[] arr = new double[n];
+        for (int i = 0; i < n; i++) arr[i] = readInteger();
+        return arr;
+    }
+
+    public List<String> readStringList(int n) {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(readString());
+        return list;
+    }
+
+    public String[] readStringArray(int n) {
+        String[] arr = new String[n];
+        for (int i = 0; i < n; i++) arr[i] = readString();
+        return arr;
+    }
+
+    public List<Pair<Integer, Integer>> readIntIntPairList(int n) {
+        List<Pair<Integer, Integer>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(Pair.of(readInteger(), readInteger()));
+        return list;
+    }
+
+    public List<Pair<Double, Double>> readDoubleDoublePairList(int n) {
+        List<Pair<Double, Double>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(Pair.of(readDouble(), readDouble()));
+        return list;
+    }
+
+    public List<Pair<Integer, String>> readIntStringPairList(int n) {
+        List<Pair<Integer, String>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(Pair.of(readInteger(), readString()));
+        return list;
+    }
+
+    public List<Pair<String, Integer>> readStringIntPairList(int n) {
+        List<Pair<String, Integer>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(Pair.of(readString(), readInteger()));
+        return list;
+    }
+
+    public List<Pair<String, String>> readStringStringPairList(int n) {
+        List<Pair<String, String>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) list.add(Pair.of(readString(), readString()));
+        return list;
+    }
+    //~ Input Helper Methods :: end ~//
 }
