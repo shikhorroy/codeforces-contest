@@ -111,4 +111,14 @@ public class MathUtility {
 
         return false;
     }
+
+    public static int trailingZeroOfFactorial(long n) {
+        int zeros = 0;
+        long multipleOf5 = 5;
+        while (multipleOf5 <= n) {
+            zeros += n / multipleOf5;
+            multipleOf5 *= 5;
+        }
+        return zeros;
+    }
 }
