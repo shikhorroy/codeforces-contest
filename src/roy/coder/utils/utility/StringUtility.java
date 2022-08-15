@@ -38,7 +38,7 @@ public class StringUtility {
      * Check if target string is a sub-sequence of source string.
      * Complexity: O(m x n), m - length of source string, n - length of target string
      *
-     * @param source - where need to check
+     * @param source where need to check
      * @param target is to check
      * @return true if target is a sub-sequence, false otherwise.
      */
