@@ -27,7 +27,7 @@ public class Searching {
         int low = 0;
         int high = array.size();
         while (low < high) {
-            final int mid = (low + high) >> 1;
+            final int mid = low + (high - low) >> 1;
             Comparable<? super T> midVal = (Comparable) array.get(mid);
             int cmp = midVal.compareTo(key);
 
