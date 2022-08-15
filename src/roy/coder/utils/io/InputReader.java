@@ -4,9 +4,7 @@ import roy.coder.utils.utility.Pair;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
+import java.util.*;
 
 public class InputReader {
 
@@ -251,6 +249,24 @@ public class InputReader {
         List<Pair<String, String>> list = new ArrayList<>();
         for (int i = 0; i < n; i++) list.add(Pair.of(readString(), readString()));
         return list;
+    }
+
+    public Set<Integer> readIntegerSet(int n) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < n; i++) set.add(readInteger());
+        return set;
+    }
+
+    public Set<Long> readLongSet(int n) {
+        Set<Long> set = new HashSet<>();
+        for (int i = 0; i < n; i++) set.add(readLong());
+        return set;
+    }
+
+    public Set<String> readStringSet(int n) {
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < n; i++) set.add(readString());
+        return set;
     }
     //~ Input Helper Methods :: end ~//
 }
