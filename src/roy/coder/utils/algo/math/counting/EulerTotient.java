@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Euler's totient function, also known as phi-function,
  * counts the number of integers between 1 and n inclusive, which are co-prime to n.
+ * Complexity: O(n log log n)
  */
 public class EulerTotient {
 
