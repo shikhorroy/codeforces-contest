@@ -29,7 +29,7 @@
          int[] a = new int[5]{1,2,3,4,5};
          int[] b = Arrays.copyOf(a, a.length);
 
-- Using `Arrays.copyOfRange()`
+- Using `Arrays.copyOfRange()` (deep copy - create a new instance)
 
          public static <T> T[] copyOfRange(T[] original, int from, int to)
 
