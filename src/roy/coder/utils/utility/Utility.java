@@ -26,32 +26,4 @@ public class Utility {
         for (T value : values) if (value.equals(target)) return true;
         return false;
     }
-
-    /**
-     * Find max values among integer or long values.
-     *
-     * @param values - among where max value need to find.
-     * @param <T>    - should be of integer or long.
-     * @return maximum among values.
-     */
-    public static <T extends Number> T max(T... values) {
-        T max = values[0];
-        for (int i = 1; i < values.length; i++)
-            if (values[i].longValue() > max.longValue()) max = values[i];
-        return max;
-    }
-
-    /**
-     * Find min values among integer or long values.
-     *
-     * @param values - among where min value need to find.
-     * @param <T>    - should be of integer or long.
-     * @return minimum among values.
-     */
-    public static <T extends Number> T min(T... values) {
-        T min = values[0];
-        for (int i = 1; i < values.length; i++)
-            if (values[i].longValue() < min.longValue()) min = values[i];
-        return min;
-    }
 }

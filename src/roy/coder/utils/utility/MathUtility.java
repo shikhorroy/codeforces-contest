@@ -21,6 +21,32 @@ public class MathUtility {
     }
 
     /**
+     * Find max values among integer or long values.
+     *
+     * @param values - among where max value need to find.
+     * @return maximum among values.
+     */
+    public static long max(long... values) {
+        long max = values[0];
+        for (int i = 1; i < values.length; i++)
+            if (values[i] > max) max = values[i];
+        return max;
+    }
+
+    /**
+     * Find min values among integer or long values.
+     *
+     * @param values - among where min value need to find.
+     * @return minimum among values.
+     */
+    public static long min(long... values) {
+        long min = values[0];
+        for (int i = 1; i < values.length; i++)
+            if (values[i] < min) min = values[i];
+        return min;
+    }
+
+    /**
      * This will give the # of digits needed for a number num in format : base.
      * time : O(1), space : O(1)
      */
