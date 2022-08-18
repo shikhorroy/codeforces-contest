@@ -33,10 +33,22 @@
 
          public static <T> T[] copyOfRange(T[] original, int from, int to)
 
-- Using `Object.clone()`
+- Using `Object.clone()` (deep copy - create a new instance)
 
          int[] a = new int[]{1,2,3,4,5};
          int[] b = a.clone();
+
+- Copy a collections to another collections (use constructor):
+
+      List<Integer> a1 = Arrays.asList(1, 3, 49, 2, 4, 89);
+      List<Integer> a2 = new ArrayList<>(a1);
+      a1.set(1, 1000);
+      System.out.println("a1 = " + a1);
+      System.out.println("a2 = " + a2);
+
+      Output:
+      a1 = [1, 1000, 49, 2, 4, 89]
+      a2 = [1, 3, 49, 2, 4, 89]
 
 3.A declared array contains default values as instance variable.
 
