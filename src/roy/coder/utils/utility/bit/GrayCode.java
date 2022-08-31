@@ -34,4 +34,12 @@ public class GrayCode {
         }
         return grays;
     }
+
+    public static List<Integer> allNumbers(int n) {
+        List<Integer> grays = new ArrayList<>();
+        for (int i = 0, all = (1 << n); i < all; i++) {
+            grays.add(of(i));
+        }
+        return grays;
+    }
 }
