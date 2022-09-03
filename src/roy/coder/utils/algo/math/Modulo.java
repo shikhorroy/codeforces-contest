@@ -43,13 +43,13 @@ public class Modulo {
      */
     public long div(long a, long b) {
         // (a % m * (1 / b) % m) % m
-        return mod(mod(a) * modInverse(b));
+        return mod(mod(a) * inverse(b));
     }
 
     /**
      * Calculate a<sup>-1</sup> % m
      */
-    public long modInverse(long a) {
+    public long inverse(long a) {
         return BigInteger.valueOf(a)
                 .modInverse(BigInteger.valueOf(this.mod))
                 .longValue();
