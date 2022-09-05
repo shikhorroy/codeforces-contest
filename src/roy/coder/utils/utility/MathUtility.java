@@ -138,7 +138,7 @@ public class MathUtility {
         return false;
     }
 
-    public static int trailingZeroOfFactorial(long n) {
+    public static int trailingZerosOfFactorial(long n) {
         int zeros = 0;
         long multipleOf5 = 5;
         while (multipleOf5 <= n) {
@@ -146,5 +146,14 @@ public class MathUtility {
             multipleOf5 *= 5;
         }
         return zeros;
+    }
+
+    public static int countDigitsOfFactorial(int n) {
+        if (n < 0) return 0;
+        if (n <= 1) return 1;
+
+        double digits = 0;
+        for (int x = 2; x <= n; x++) digits += Math.log10(x);
+        return (int) (Math.floor(digits)) + 1;
     }
 }
