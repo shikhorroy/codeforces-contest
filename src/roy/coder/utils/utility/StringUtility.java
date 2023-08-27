@@ -1,6 +1,8 @@
 package roy.coder.utils.utility;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class StringUtility {
@@ -54,5 +56,17 @@ public class StringUtility {
                         && source.charAt(sourceIndex - 1) == target.charAt(targetIndex - 1) //~ source: abcde, target: acf
 
         );
+    }
+
+    public static Set<Character> uniqueCharsSet(String string) {
+        return string.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toSet());
+    }
+
+    public static Set<Character> sortedUniqueCharsSet(String string) {
+        return string.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toCollection(TreeSet::new));
     }
 }
