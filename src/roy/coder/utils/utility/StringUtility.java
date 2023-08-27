@@ -1,8 +1,7 @@
 package roy.coder.utils.utility;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StringUtility {
 
@@ -13,9 +12,10 @@ public class StringUtility {
      * @return alphabetically sorted string
      */
     public static String sort(String string) {
-        char[] sa = string.toCharArray();
-        Arrays.sort(sa);
-        return new String(sa);
+        return string.chars()
+                .sorted()
+                .mapToObj(c -> String.valueOf((char) c))
+                .collect(Collectors.joining());
     }
 
     /**
@@ -25,13 +25,10 @@ public class StringUtility {
      * @param string - need to count frequency.
      * @return Map of characters count.
      */
-    public static Map<Character, Integer> countFrequency(String string) {
-        Map<Character, Integer> frequency = new HashMap<>();
-        for (Character c : string.toCharArray()) {
-            if (!frequency.containsKey(c)) frequency.put(c, 0);
-            frequency.put(c, frequency.get(c) + 1);
-        }
-        return frequency;
+    public static Map<Character, Long> countFrequency(String string) {
+        return string.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
     }
 
     /**
