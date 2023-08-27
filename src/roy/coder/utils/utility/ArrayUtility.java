@@ -1,6 +1,7 @@
 package roy.coder.utils.utility;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArrayUtility {
 
@@ -12,26 +13,24 @@ public class ArrayUtility {
 
     public static <T> boolean areAllEvens(List<T> list) {
         safetyCheck(list);
-        for (T value : list) if (MathUtility.isOdd(value)) return false;
-        return true;
+        return list.stream().allMatch(MathUtility::isEven);
     }
 
     public static <T> boolean areAllOdds(List<T> list) {
         safetyCheck(list);
-        for (T value : list) if (MathUtility.isEven(value)) return false;
-        return true;
+        return list.stream().allMatch(MathUtility::isOdd);
     }
 
-    public static <T> int countEvens(List<T> list) {
-        int evens = 0;
-        for (T value : list) if (MathUtility.isEven(value)) ++evens;
-        return evens;
+    public static <T> long countEvens(List<T> list) {
+        return list.stream()
+                .filter(MathUtility::isEven)
+                .count();
     }
 
-    public static <T> int countOdds(List<T> list) {
-        int odds = 0;
-        for (T value : list) if (MathUtility.isOdd(value)) ++odds;
-        return odds;
+    public static <T> long countOdds(List<T> list) {
+        return list.stream()
+                .filter(MathUtility::isOdd)
+                .count();
     }
 
     /**
@@ -43,12 +42,13 @@ public class ArrayUtility {
      * @return Map of item count.
      */
     public static <T> Map<T, Integer> countFrequency(List<T> itemList) {
-        Map<T, Integer> frequency = new HashMap<>();
-        for (T t : itemList) {
-            if (!frequency.containsKey(t)) frequency.put(t, 0);
-            frequency.put(t, frequency.get(t) + 1);
-        }
-        return frequency;
+        return itemList.stream()
+                .collect(Collectors.toMap(
+                                item -> item,
+                                item -> 1,
+                                (existingValue, newValue) -> existingValue + 1
+                        )
+                );
     }
 
     /**
